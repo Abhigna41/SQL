@@ -115,6 +115,25 @@ select * from ipl limit 3;
 select * from ipl
 where team1 LIKE 'S%'
 
+SELECT winner, COUNT(winner) AS count
+FROM ipl
+GROUP BY winner
+HAVING COUNT(*) > 1;
+
+
+SELECT winner, COUNT(winner) AS count
+FROM ipl
+GROUP BY winner
+HAVING COUNT(winner) > 70;
+order BY count(winner)
+
+
+SELECT winner, COUNT(winner) AS count
+FROM ipl
+GROUP BY winner
+HAVING COUNT(winner) > 70
+ORDER BY COUNT(winner) DESC;
+
 
 select max(win_by_runs) from ipl
 
